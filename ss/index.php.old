@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Welcome to OpenShift</title>
+
+<style>
+
+/*!
+ * Bootstrap v3.0.0
+ *
+ * Copyright 2013 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+  .logo {
+    background-size: cover;
+    height: 58px;
+    width: 180px;
+    margin-top: 6px;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDQzMzYzKSAgLS0+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTgwcHgiDQoJIGhlaWdodD0iNThweCIgdmlld0JveD0iLTEyNy4zOTEgNDMyLjAxOSAxODAgNTgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgLTEyNy4zOTEgNDMyLjAxOSAxODAgNTgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGcgaWQ9IkxheWVyXzEiIGRpc3BsYXk9Im5vbmUiPg0KCTxnIGRpc3BsYXk9ImlubGluZSI+DQoJCTxwYXRoIGQ9Ik0tMTIxLjM4NSw0MzguNzQ5Yy0wLjQxNiwwLjM2MS0xLjAwNiwwLjU0MS0xLjc3MSwwLjU0MWgtMi43NzR2LTdoMi44NzRjMC42MTIsMCwxLjA5OSwwLjE1NSwxLjQ2MiwwLjQ2NA0KCQkJYzAuMzYyLDAuMzEsMC41NDQsMC43NiwwLjU0NCwxLjM1M2MwLDAuMzU5LTAuMDg0LDAuNjUxLTAuMjUzLDAuODc0Yy0wLjE2OCwwLjIyMy0wLjM3OCwwLjM5OC0wLjYyOSwwLjUyNA0KCQkJYzAuMTM5LDAuMDQsMC4yNzgsMC4xMDIsMC40MTcsMC4xODVzMC4yNjUsMC4xOTIsMC4zNzcsMC4zMjZjMC4xMTIsMC4xMzMsMC4yMDQsMC4yOTMsMC4yNzMsMC40OHMwLjEwNCwwLjQwMSwwLjEwNCwwLjY0MQ0KCQkJQy0xMjAuNzYxLDQzNy44NTItMTIwLjk2OSw0MzguMzg5LTEyMS4zODUsNDM4Ljc0OXogTS0xMjIuMzEyLDQzMy41MTRjLTAuMTQ2LTAuMTc2LTAuMzk2LTAuMjY0LTAuNzUtMC4yNjRoLTEuODh2MS44aDEuODgNCgkJCWMwLjE3MywwLDAuMzIyLTAuMDI0LDAuNDQ1LTAuMDc0YzAuMTIzLTAuMDUsMC4yMjMtMC4xMTYsMC4zLTAuMTk5YzAuMDc3LTAuMDgzLDAuMTMzLTAuMTc3LDAuMTctMC4yODNzMC4wNTUtMC4yMTUsMC4wNTUtMC4zMjgNCgkJCUMtMTIyLjA5MSw0MzMuOTA2LTEyMi4xNjUsNDMzLjY4OS0xMjIuMzEyLDQzMy41MTR6IE0tMTIyLjEyMSw0MzYuMzJjLTAuMjE0LTAuMjA3LTAuNTItMC4zMS0wLjkyLTAuMzFoLTEuOXYyLjMyaDEuODcNCgkJCWMwLjQ2NiwwLDAuNzk1LTAuMTA2LDAuOTg1LTAuMzJzMC4yODUtMC40OTQsMC4yODUtMC44NEMtMTIxLjgwMSw0MzYuODEtMTIxLjkwOCw0MzYuNTI3LTEyMi4xMjEsNDM2LjMyeiIvPg0KCQk8cGF0aCBkPSJNLTExNi4yODEsNDM5LjI5di0wLjUwNmMtMC4xMzQsMC4xOTUtMC4zMTgsMC4zNDctMC41NTUsMC40NTVzLTAuNDkyLDAuMTYyLTAuNzY1LDAuMTYyYy0wLjYxMywwLTEuMDc4LTAuMTk2LTEuMzk1LTAuNTkNCgkJCWMtMC4zMTYtMC4zOTMtMC40NzUtMC45OC0wLjQ3NS0xLjc2di0zLjAxaDEuMDR2Mi45NjNjMCwwLjUzMiwwLjA5NSwwLjkwNSwwLjI4NCwxLjExN2MwLjE4OSwwLjIxMywwLjQ1MywwLjMxOSwwLjc5MiwwLjMxOQ0KCQkJYzAuMzQ1LDAsMC42MS0wLjExNiwwLjc5Ni0wLjM0OWMwLjE4Ni0wLjIzMywwLjI3OS0wLjU2MiwwLjI3OS0wLjk4OHYtMy4wNjNoMS4wNHY1LjI1SC0xMTYuMjgxeiIvPg0KCQk8cGF0aCBkPSJNLTExMi42OTcsNDMzLjE2NWMtMC4xMywwLjEzLTAuMjg1LDAuMTk1LTAuNDY1LDAuMTk1Yy0wLjE4NywwLTAuMzQ1LTAuMDY1LTAuNDc1LTAuMTk1cy0wLjE5NS0wLjI4NS0wLjE5NS0wLjQ2NQ0KCQkJYzAtMC4xODcsMC4wNjUtMC4zNDUsMC4xOTUtMC40NzVzMC4yODgtMC4xOTUsMC40NzUtMC4xOTVjMC4xOCwwLDAuMzM1LDAuMDY1LDAuNDY1LDAuMTk1czAuMTk1LDAuMjg5LDAuMTk1LDAuNDc1DQoJCQlDLTExMi41MDEsNDMyLjg4LTExMi41NjcsNDMzLjAzNS0xMTIuNjk3LDQzMy4xNjV6IE0tMTEzLjY4Miw0MzkuMjl2LTUuMjVoMS4wNHY1LjI1SC0xMTMuNjgyeiIvPg0KCQk8cGF0aCBkPSJNLTExMS4wMzEsNDM5LjI5di02Ljc1bDEuMDQtMC41NHY3LjI5SC0xMTEuMDMxeiIvPg0KCQk8cGF0aCBkPSJNLTEwNS45MjEsNDM5LjE2Yy0wLjEyNywwLjA3My0wLjI3NSwwLjEzMS0wLjQ0NSwwLjE3NWMtMC4xNywwLjA0My0wLjM1OCwwLjA2NS0wLjU2NSwwLjA2NQ0KCQkJYy0wLjM2NywwLTAuNjU1LTAuMTEzLTAuODY1LTAuMzRzLTAuMzE1LTAuNTc3LTAuMzE1LTEuMDV2LTMuMDNoLTAuNzV2LTAuOTRoMC43NXYtMS41bDEuMDEtMC41NHYyLjA0aDEuM3YwLjk0aC0xLjN2Mi44NQ0KCQkJYzAsMC4yNDcsMC4wNDIsMC40MTQsMC4xMjUsMC41YzAuMDgzLDAuMDg3LDAuMjIyLDAuMTMsMC40MTUsMC4xM2MwLjEzMywwLDAuMjctMC4wMjEsMC40MS0wLjA2NXMwLjI1Ni0wLjA5MSwwLjM1LTAuMTQ1DQoJCQlMLTEwNS45MjEsNDM5LjE2eiIvPg0KCQk8cGF0aCBkPSJNLTk3LjQ1Miw0MzcuODA1Yy0wLjEyLDAuMzQzLTAuMjg3LDAuNjMzLTAuNSwwLjg3Yy0wLjIxMywwLjIzNy0wLjQ2MywwLjQxNy0wLjc1LDAuNTQNCgkJCWMtMC4yODcsMC4xMjQtMC42LDAuMTg1LTAuOTQsMC4xODVjLTAuMzMzLDAtMC42NC0wLjA2NS0wLjkyLTAuMTk1Yy0wLjI4LTAuMTMtMC41MjMtMC4zMTUtMC43My0wLjU1NQ0KCQkJYy0wLjIwNy0wLjI0LTAuMzY4LTAuNTI2LTAuNDg1LTAuODZzLTAuMTc1LTAuNzA3LTAuMTc1LTEuMTJjMC0wLjQyNiwwLjA2LTAuODEsMC4xOC0xLjE1czAuMjg1LTAuNjI4LDAuNDk1LTAuODY1DQoJCQljMC4yMS0wLjIzNywwLjQ1Ny0wLjQxNywwLjc0LTAuNTRjMC4yODQtMC4xMjQsMC41OTItMC4xODUsMC45MjUtMC4xODVjMC4zMzMsMCwwLjY0MywwLjA2NSwwLjkzLDAuMTk1czAuNTM1LDAuMzEyLDAuNzQ1LDAuNTQ1DQoJCQlzMC4zNzQsMC41MTksMC40OSwwLjg1NWMwLjExNiwwLjMzNywwLjE3NSwwLjcwOCwwLjE3NSwxLjExNUMtOTcuMjcxLDQzNy4wNzMtOTc
+  }
+.logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+aside,
+footer,
+header,
+hgroup,
+section{
+  display: block;
+}
+body {
+  color: #404040;
+  font-family: "Helvetica Neue",Helvetica,"Liberation Sans",Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+ul {
+    margin-top: 0;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.container:before,
+.container:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.container:after {
+  clear: both;
+}
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.row:before,
+.row:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.row:after {
+  clear: both;
+}
+.col-sm-6, .col-md-6, .col-xs-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.col-xs-12 {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+  .col-sm-6 {
+    float: left;
+  }
+  .col-sm-6 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+  .col-md-6 {
+    float: left;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+a {
+  color: #069;
+  text-decoration: none;
+}
+a:hover {
+  color: #EA0011;
+  text-decoration: underline;
+}
+hgroup {
+  margin-top: 50px;
+}
+footer {
+    margin: 50px 0 25px;
+}
+h1, h2, h3 {
+  color: #000;
+  line-height: 1.38em;
+  margin: 1.5em 0 .3em;
+}
+h1 {
+  font-size: 25px;
+  font-weight: 300;
+  border-bottom: 1px solid #fff;
+  margin-bottom: .5em;
+}
+h1:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+}
+h2 {
+  font-size: 19px;
+  font-weight: 400;
+}
+h3 {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0 0 .3em;
+}
+p {
+  margin: 0 0 2em;
+}
+p + h2 {
+  margin-top: 2em;
+}
+html {
+  background: #f5f5f5;
+  height: 100%;
+}
+code {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 1px 5px;
+  color: #888;
+}
+pre {
+  display: block;
+  padding: 13.333px 20px;
+  margin: 0 0 20px;
+  font-size: 13px;
+line-height: 1.4;
+  background-color: #fff;
+  border-left: 2px solid rgba(120,120,120,0.35);
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: normal;
+  word-wrap: break-word;
+  overflow: auto;
+  font-family: Menlo,Monaco,"Liberation Mono",Consolas,monospace !important;
+}
+
+</style>
+
+</head>
+<body>
+
+<section class='container'>
+          <hgroup>
+            <h1>Welcome to your PHP application on OpenShift</h1>
+          </hgroup>
+
+
+        <div class="row">
+          <section class='col-xs-12 col-sm-6 col-md-6'>
+            <section>
+              <h2>Deploying code changes</h2>
+                <p>OpenShift uses the <a href="http://git-scm.com/">Git version control system</a> for your source code, and grants you access to it via the Secure Shell (SSH) protocol. In order to upload and download code to your application you need to give us your <a href="https://developers.openshift.com/en/managing-remote-connection.html">public SSH key</a>. You can upload it within the web console or install the <a href="https://developers.openshift.com/en/managing-client-tools.html">RHC command line tool</a> and run <code>rhc setup</code> to generate and upload your key automatically.</p>
+
+                <h3>Working in your local Git repository</h3>
+                <p>If you created your application from the command line and uploaded your SSH key, rhc will automatically download a copy of that source code repository (Git calls this 'cloning') to your local system.</p>
+
+                <p>If you created the application from the web console, you'll need to manually clone the repository to your local system. Copy the application's source code Git URL and then run:</p>
+
+<pre>$ git clone &lt;git_url&gt; &lt;directory_to_create&gt;
+
+# Within your project directory
+# Commit your changes and push to OpenShift
+
+$ git commit -a -m 'Some commit message'
+$ git push</pre>
+
+
+                  <ul>
+                    <li><a href="https://developers.openshift.com/en/managing-modifying-applications.html">Learn more about deploying and building your application</a></li>
+                    <li>See the README file in your local application Git repository for more information on the options for deploying applications.</li>
+                  </ul>
+            </section>
+
+          </section>
+          <section class="col-xs-12 col-sm-6 col-md-6">
+
+                <h2>Managing your application</h2>
+
+                <h3>Web Console</h3>
+                <p>You can use the OpenShift web console to enable additional capabilities via cartridges, add collaborator access authorizations, designate custom domain aliases, and manage domain memberships.</p>
+
+                <h3>Command Line Tools</h3>
+                <p>Installing the <a href="https://developers.openshift.com/en/managing-client-tools.html">OpenShift RHC client tools</a> allows you complete control of your cloud environment. Read more on how to manage your application from the command line in our <a href="https://www.openshift.com/user-guide">User Guide</a>.
+                </p>
+
+                <h2>Development Resources</h2>
+                  <ul>
+                    <li><a href="https://developers.openshift.com/en/php-overview.html">Getting Started with PHP on OpenShift</a></li>
+                    <li><a href="https://developers.openshift.com">Developer Center</a></li>
+                    <li><a href="https://www.openshift.com/user-guide">User Guide</a></li>
+                    <li><a href="https://help.openshift.com">Help Center</a></li>
+                    <li><a href="http://stackoverflow.com/questions/tagged/openshift">Stack Overflow questions for OpenShift</a></li>
+                    <li><a href="http://git-scm.com/documentation">Git documentation</a></li>
+                  </ul>
+
+
+          </section>
+        </div>
+
+
+        <footer>
+          <div class="logo"><a href="https://www.openshift.com/"></a></div>
+        </footer>
+</section>
+
+</body>
+</html>
