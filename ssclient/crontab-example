@@ -1,0 +1,2 @@
+# ssclient crontab
+*/15 * * * *    {USER}  /home/{USER}/ssclient/ssclient.py

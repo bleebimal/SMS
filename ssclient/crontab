@@ -1,0 +1,2 @@
+# ssclient crontab
+*/1 * * * *    shankar  /home/shankar/src/ssclient/ssclient.py
